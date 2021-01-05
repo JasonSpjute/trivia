@@ -1,11 +1,10 @@
 import { generateId } from "../Utils/GenerateId.js"
 
 export default class Trivia{
-    constructor({category, question, correct_answer, id}) {
+    constructor({category, question, correct_answer}) {
         this.category = category
         this.question = question
         this.correct = correct_answer
-        this.id = generateId
     }
 
     get Template (){
@@ -18,8 +17,8 @@ export default class Trivia{
                     <div class = "card-body">
                         <h4>${this.question}</h4>
                         <div class="text-center">
-                        <button type="button" class="btn btn-dark" onclick="app.triviaController.tru('${this.id}')">True</button>
-                        <button type="button" class="btn btn-warning" onclick="alert('The answer is ${this.correct}')">False</button>
+                        <button type="button" class="btn btn-dark" ${this.correct === "True" ? `onclick="alert('You are correct! the answer is ${this.correct}.')"` : `onclick="alert('You are wrong! the answer is ${this.correct}.')"`}>True</button>
+                        <button type="button" class="btn btn-warning" ${this.correct === "False" ? `onclick="alert('You are correct! The answer is ${this.correct}.')"` : `onclick="alert('You are wrong! The answer is ${this.correct}.')"`}>False</button>
                         </div>
                     </div>
                 </div>

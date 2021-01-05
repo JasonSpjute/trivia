@@ -11,7 +11,4 @@ export default class TriviaController{
         ProxyState.on('trivias', _drawTrivias)
         triviaService.getTrivias()
         }
-        tru(id) {
-            triviaService.tru(id);
-        }
     }
