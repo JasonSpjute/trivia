@@ -11,4 +11,7 @@ export default class TriviaController{
         ProxyState.on('trivias', _drawTrivias)
         triviaService.getTrivias()
         }
+       reset(){
+           triviaService.getTrivias()
+       }
     }
